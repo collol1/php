@@ -38,22 +38,23 @@ if (!$row) {
 }
 ?>
 <h2>Sửa sinh viên</h2>
+<table border='1' cellspacing=0 cellpadding='10px'>
 <form method="post" enctype="multipart/form-data">
-    Mã sinh viên: <input type="text" name="MASV" value="<?php echo htmlspecialchars($row['MASV']); ?>" readonly><br>
-    Tên sinh viên: <input type="text" name="HOTENSV" value="<?php echo htmlspecialchars($row['HOTENSV']); ?>" required><br>
-    Ngày sinh: <input type="date" name="NGAYSINH" value="<?php echo htmlspecialchars($row['NGAYSINH']); ?>" required><br>
-    Địa chỉ: <input type="text" name="DIACHI" value="<?php echo htmlspecialchars($row['DIACHI']); ?>" required><br>
-    Ảnh hiện tại: 
+    <tr><td>Mã sinh viên: </td><td> <input type="text" name="MASV" value="<?php echo htmlspecialchars($row['MASV']); ?>" readonly></td></tr>
+    <tr><td>Tên sinh viên: </td><td> <input type="text" name="HOTENSV" value="<?php echo htmlspecialchars($row['HOTENSV']); ?>" required></td></tr>
+    <tr><td>Ngày sinh: </td><td> <input type="date" name="NGAYSINH" value="<?php echo htmlspecialchars($row['NGAYSINH']); ?>" required></td></tr>
+    <tr><td>Địa chỉ:   </td><td> <input type="text" name="DIACHI" value="<?php echo htmlspecialchars($row['DIACHI']); ?>" required></td></tr>
+    <tr><td>Ảnh hiện tại:  </td><td>
     <?php if ($row['ANH']) { ?>
-        <img src="images/<?php echo htmlspecialchars($row['ANH']); ?>" width="100px" id="currentImage"><br>
+        <img src="images/<?php echo htmlspecialchars($row['ANH']); ?>" width="100px" id="currentImage"></td></tr>
     <?php } else { echo "Không có ảnh<br>"; } ?>
-    Ảnh mới: <input type="file" name="ANH" id="ANH" accept="image/*"><br>
+    <tr><td>Ảnh mới:  </td><td> <input type="file" name="ANH" id="ANH" accept="image/*"></td></tr>
     <div id="newImagePreview" style="display:none;">
-        <p>Ảnh mới:</p>
-        <img id="preview" src="#" alt="Ảnh mới" width="100px">
+     <tr><td>Ảnh mới: </td><td>
+        <img id="preview" src="#" alt="Chưa có ảnh" width="100px"> </td></tr>
     </div>
     <input type="hidden" name="ANH_OLD" value="<?php echo htmlspecialchars($row['ANH']); ?>">
-    Lớp: 
+    <tr><td>Lớp:    </td><td>
     <select name="MALOP" required>
         <option value="">--Chọn lớp--</option>
         <?php
@@ -63,9 +64,9 @@ if (!$row) {
                 <?php echo $lop['TENLOP']; ?>
             </option>
         <?php } ?>
-    </select><br>
+    </select></td></tr>
     <button type="submit">Cập nhật</button>
-    <a href="dssinhvien.php">Quay lại</a>
+    <button><a href="dssinhvien.php">Quay lại</a></button>
 </form>
 
 <script>

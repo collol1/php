@@ -21,9 +21,10 @@ if (!$row) {
 }
 ?>
 <h2>Sửa lớp</h2>
+<table border='1' cellspacing=0 cellpadding='10px'>
 <form method="post">
-    Mã lớp: <input type="text" name="malop" value="<?php echo htmlspecialchars($row['MALOP']); ?>" readonly><br>
-    Tên lớp: <input type="text" name="tenlop" value="<?php echo htmlspecialchars($row['TENLOP']); ?>" required><br>
+    <tr><td>Mã lớp: </td><td> <input type="text" name="malop" value="<?php echo htmlspecialchars($row['MALOP']); ?>" readonly></td></tr>
+    <tr><td>TTên lớp: </td><td> <input type="text" name="tenlop" value="<?php echo htmlspecialchars($row['TENLOP']); ?>" required></td></tr>
     <button type="submit">Cập nhật</button>
-    <a href="dslop.php">Quay lại</a>
+    <button><a href="dslop.php">Quay lại</a></button>
 </form>

@@ -11,9 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <h2>Thêm lớp</h2>
+<table border='1' cellspacing=0 cellpadding='10px'>
 <form method="post">
-    Mã lớp: <input type="text" name="malop" required><br>
-    Tên lớp: <input type="text" name="tenlop" required><br>
+    <tr><td>Mã lớp: </td><td> <input type="text" name="malop" required></td></tr>
+    <tr><td>Tên lớp: </td><td> <input type="text" name="tenlop" required></td></tr>
     <button type="submit">Thêm</button>
-    <a href="dslop.php">Quay lại</a>
+    <button><a href="dslop.php">Quay lại</a> </button>
 </form>
+</table>
